@@ -4,8 +4,8 @@ import Items from "./Components/Items/Items.js";
 import AddItem from "./Components/AddItem/AddItem.js";
 import useLocalStorage from "./Hooks/UseLocalStorage";
 function App() {
-  const [items, setItems] = useState([]);
-  //const [items, setItems] = useLocalStorage([], "todo-list");
+  //const [items, setItems] = useState([]);
+  const [items, setItems] = useLocalStorage([], "todo-list");
 
   const addItem = ({ ToDo }) => {
     const item = { id: items.length, ToDo, isComplete: false };
@@ -24,7 +24,7 @@ function App() {
     });
     setItems([...a77a]);
   };
-  const setUpdate2 = (isComplete, id) => {
+  const markAsComplete = (isComplete, id) => {
     let a77a = items.map((item) => {
       if (item.id === id) {
         item.isComplete = isComplete;
@@ -40,7 +40,7 @@ function App() {
         items={items}
         deleteItem={deleteItem}
         setUpdate={setUpdate}
-        setUpdate2={setUpdate2}
+        markAsComplete={markAsComplete}
       />
       <AddItem addItem={addItem} />
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import "./Items.css";
 import Button from "../Button/index.jsx";
 const Items = (props) => {
-  const { items, deleteItem, setUpdate, setUpdate2 } = props;
+  const { items, deleteItem, setUpdate, markAsComplete } = props;
   const ListItems = items.map((item) => {
     return (
       <div key={item.id}>
@@ -19,7 +19,7 @@ const Items = (props) => {
         <input
           type="checkbox"
           onChange={(e) => {
-            setUpdate2(!item.isComplete, item.id);
+            markAsComplete(!item.isComplete, item.id);
           }}
           className="check"
         />
