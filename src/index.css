@@ -18,25 +18,29 @@ body{
   margin:10% auto;
 }
 .ListItems{
-  width:30%;
+  width:100%;
   text-align:center;
   margin:10% auto;
   color:#fff;
 }
 
-.ListItems span{
+.Edit {
   display:inline-block;
   text-align:center;
   padding:10px;
   font-size:20px;
-  border:0.5 solid #fff;
+  width:50%;
+  background:transparent;
+  color:#fff;
+  border: 0;
 }
 form input{
-  margin:10%,auto;
+  margin:0,auto;
   padding:10px;
   border:0.5px solid #fff;
   color:black;
-  cursor:pointer; 
+  cursor:pointer;
+  
 }
 form input[type=text]{
   width:80%;
@@ -46,4 +50,14 @@ form input[type=text]{
 form input[type=submit]{
   width:20%;
 
+}
+
+.delete{
+padding:10px;
+margin:0,auto; 
+float:right;
+width:20%;
+}
+.Edit:focus{
+  outline:none;
 }

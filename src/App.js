@@ -1,24 +1,50 @@
-import React, { Component, useState } from 'react';
-import './App.css';
-import Items from './Components/Items/Items.js'
-import AddItem from './Components/AddItem/AddItem.js'
-function App () {
+import React, { Component, useState } from "react";
+import "./App.css";
+import Items from "./Components/Items/Items.js";
+import AddItem from "./Components/AddItem/AddItem.js";
+import useLocalStorage from "./Hooks/UseLocalStorage";
+function App() {
+  const [items, setItems] = useState([]);
+  //const [items, setItems] = useLocalStorage([], "todo-list");
 
-  const [items,setItems]=useState([]);
-  const addItem = (item)=>{
-    item.id = items.length;
-    
-    setItems([...items,item])
-  }
-  
-    return(
-      <div className="App">
-        <h1 className="center">Todo List</h1>
-        <Items items={items}  />
-        <AddItem addItem={addItem} />
-      </div>
-    )
-  
+  const addItem = ({ ToDo }) => {
+    const item = { id: items.length, ToDo, isComplete: false };
+    setItems([...items, item]);
+  };
+  const deleteItem = (id) => {
+    let a7a = items.filter((item) => item.id !== id);
+    setItems(a7a);
+  };
+  const setUpdate = (ToDo, id) => {
+    let a77a = items.map((item) => {
+      if (item.id === id) {
+        item.ToDo = ToDo;
+      }
+      return item;
+    });
+    setItems([...a77a]);
+  };
+  const setUpdate2 = (isComplete, id) => {
+    let a77a = items.map((item) => {
+      if (item.id === id) {
+        item.isComplete = isComplete;
+      }
+      return item;
+    });
+    setItems([...a77a]);
+  };
+  return (
+    <div className="App">
+      <h1 className="center">Todo List</h1>
+      <Items
+        items={items}
+        deleteItem={deleteItem}
+        setUpdate={setUpdate}
+        setUpdate2={setUpdate2}
+      />
+      <AddItem addItem={addItem} />
+    </div>
+  );
 }
 
 export default App;
