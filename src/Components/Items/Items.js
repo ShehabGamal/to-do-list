@@ -2,7 +2,7 @@ import React from "react";
 import "./Items.css";
 import Button from "../Button/index.jsx";
 const Items = (props) => {
-  const { items, deleteItem, setUpdate, markAsComplete } = props;
+  const { items, deleteItem, markAsComplete } = props;
   const ListItems = items.map((item) => {
     return (
       <div key={item.id}>
@@ -12,9 +12,6 @@ const Items = (props) => {
           style={{ textDecoration: item.isComplete && "line-through" }}
           id={item.id}
           value={item.ToDo}
-          onChange={(e) => {
-            setUpdate(e.target.value, item.id);
-          }}
         />
         <input
           type="checkbox"
@@ -23,6 +20,9 @@ const Items = (props) => {
           }}
           className="check"
         />
+        <button type="button" value="Edit" className="Edit2">
+          Edit Item
+        </button>
         <Button
           type="button"
           onClick={() => deleteItem(item.id)}
@@ -33,6 +33,7 @@ const Items = (props) => {
       </div>
     );
   });
+
   return (
     <div className="ListItems">
       <div>{ListItems}</div>
