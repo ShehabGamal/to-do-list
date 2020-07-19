@@ -13,26 +13,26 @@ function App() {
     setItems([...items, item]);
   };
   const deleteItem = (id) => {
-    let a7a = items.filter((item) => item.id !== id);
-    setItems(a7a);
+    let newitems = items.filter((item) => item.id !== id);
+    setItems(newitems);
   };
   const setUpdate = (ToDo, id) => {
-    let a77a = items.map((item) => {
+    let newitems = items.map((item) => {
       if (item.id === id) {
         item.ToDo = ToDo;
       }
       return item;
     });
-    setItems([...a77a]);
+    setItems([...newitems]);
   };
   const markAsComplete = (isComplete, id) => {
-    let a77a = items.map((item) => {
+    let newitems = items.map((item) => {
       if (item.id === id) {
         item.isComplete = isComplete;
       }
       return item;
     });
-    setItems([...a77a]);
+    setItems([...newitems]);
   };
   return (
     <div className="App">
