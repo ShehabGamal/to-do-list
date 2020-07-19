@@ -2,7 +2,7 @@ import React from "react";
 import "./Items.css";
 import Item from "../Item/Item.jsx";
 const Items = (props) => {
-  const { items, deleteItem, markAsComplete } = props;
+  const { items, deleteItem, markAsComplete, setUpdate } = props;
   const ListItems = items.map((item) => {
     return (
       <Item
@@ -12,6 +12,7 @@ const Items = (props) => {
         ToDo={item.ToDo}
         deleteItem={deleteItem}
         markAsComplete={markAsComplete}
+        setUpdate={setUpdate}
       />
     );
   });
