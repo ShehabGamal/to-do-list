@@ -4,10 +4,10 @@ import "./AddItem.css";
 class AddItem extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
-    let ayhaga = false;
+    let isTrimmed = false;
     var letterNumber = /^[^\s]+(\s+[^\s]+)*$/;
-    ayhaga = e.target.ToDo.value.match(letterNumber) ? true : false;
-    if (ayhaga) {
+    isTrimmed = e.target.ToDo.value.match(letterNumber) ? true : false;
+    if (isTrimmed) {
       this.props.addItem({ ToDo: e.target.ToDo.value });
     }
     document.getElementById("ToDo").value = "";

@@ -5,10 +5,10 @@ const Item = (props) => {
   //text=ToDo
   const [text, setText] = useState(ToDo);
   const onSubmit = (value) => {
-    let ayhaga = false;
+    let isTrimmed = false;
     var letterNumber = /^[^\s]+(\s+[^\s]+)*$/;
-    ayhaga = value.match(letterNumber) ? true : false;
-    if (ayhaga) {
+    isTrimmed = value.match(letterNumber) ? true : false;
+    if (isTrimmed) {
       setUpdate(value, itemID);
     }
   };
