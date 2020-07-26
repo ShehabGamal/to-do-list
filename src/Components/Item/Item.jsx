@@ -9,7 +9,7 @@ const Item = (props) => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        let ayhaga = false;
+        let isTrimmed = false;
         var letterNumber = /^[^\s]+(\s+[^\s]+)*$/;
         let ourDiv;
         for (let index = 0; index < e.target.children.length; index++) {
@@ -27,10 +27,9 @@ const Item = (props) => {
             break;
           }
         }
-        ayhaga = ourInput.value.match(letterNumber) ? true : false;
-        console.log(2);
-        if (ayhaga) {
-          console.log(1);
+        isTrimmed = ourInput.value.match(letterNumber) ? true : false;
+
+        if (isTrimmed) {
           setUpdate(ourInput.value, itemID);
         } else {
           ourInput.value = ToDo;
