@@ -3,6 +3,7 @@ import "./App.css";
 import Items from "./Components/Items/Items.js";
 import AddItem from "./Components/AddItem/AddItem.js";
 import useLocalStorage from "./Hooks/UseLocalStorage";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   background: ${(props) => props.theme.background};
