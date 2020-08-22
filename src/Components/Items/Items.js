@@ -1,6 +1,15 @@
 import React from "react";
 import "./Items.css";
 import Item from "../Item/Item.jsx";
+import styled from "styled-components";
+
+const BasicDiv = styled.div`
+  width: 100%;
+  text-align: center;
+  margin: 10% auto;
+  color: ${(props) => props.theme.foreground};
+`;
+
 const Items = (props) => {
   const { items, deleteItem, markAsComplete, setUpdate } = props;
   const ListItems = items.map((item) => {
@@ -17,10 +26,6 @@ const Items = (props) => {
     );
   });
 
-  return (
-    <div className="ListItems">
-      <div>{ListItems}</div>
-    </div>
-  );
+  return <BasicDiv>{ListItems}</BasicDiv>;
 };
 export default Items;

@@ -4,6 +4,28 @@ import Items from "./Components/Items/Items.js";
 import AddItem from "./Components/AddItem/AddItem.js";
 import useLocalStorage from "./Hooks/UseLocalStorage";
 
+const Wrapper = styled.div`
+  background: ${(props) => props.theme.background};
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+`;
+const Container = styled.div`
+  background: ${(props) => props.theme.extraColor};
+  height: 70vh;
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 60%;
+  margin: 10% auto;
+`;
+const BasicHeader = styled.h1`
+  text-align: center;
+  color: ${(props) => props.theme.secondaryColor};
+  font-size: 50px;
+`;
 function App() {
   //const [items, setItems] = useState([]);
   const [items, setItems] = useLocalStorage([], "todo-list");
@@ -35,16 +57,18 @@ function App() {
     setItems([...newItems]);
   };
   return (
-    <div className="App">
-      <h1 className="center">Todo List</h1>
-      <Items
-        items={items}
-        deleteItem={deleteItem}
-        setUpdate={setUpdate}
-        markAsComplete={markAsComplete}
-      />
-      <AddItem addItem={addItem} />
-    </div>
+    <Wrapper>
+      <Container>
+        <BasicHeader>Todo List</BasicHeader>
+        <Items
+          items={items}
+          deleteItem={deleteItem}
+          setUpdate={setUpdate}
+          markAsComplete={markAsComplete}
+        />
+        <AddItem addItem={addItem} />
+      </Container>
+    </Wrapper>
   );
 }
 

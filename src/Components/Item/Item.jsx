@@ -1,5 +1,32 @@
 import React, { useState } from "react";
-import Button from "../Button/index.jsx";
+import styled from "styled-components";
+
+const BasicButton = styled.button`
+  padding: 10px;
+  margin: 0 auto;
+  margin-left: 5px;
+  width: 12%;
+  float: right;
+  background: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.foreground};
+  border: 0;
+  border-radius: 20px;
+  font-size: 15px;
+`;
+const BasicInput = styled.input`
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
+  width: 66%;
+  background: transparent;
+  color: ${(props) => props.theme.foreground};
+  border: 0;
+  &:focus {
+    outline: ${(props) => props.theme.outline};
+  }
+`;
+
 const Item = (props) => {
   const { deleteItem, markAsComplete, itemID, ToDo, item, setUpdate } = props;
   //text=ToDo
@@ -14,12 +41,11 @@ const Item = (props) => {
   };
   return (
     <div key={itemID}>
-      <input
-        className="Edit"
+      <BasicInput
         type="text"
         style={{
           textDecoration: item.isComplete && "line-through",
-          background: ToDo !== text && "rgba(240,240,80,0.5)",
+          background: ToDo !== text && "#353535",
         }}
         id={itemID}
         value={text}
@@ -34,24 +60,17 @@ const Item = (props) => {
         }}
         className="check"
       />
-      <button
+      <BasicButton
         type="button"
-        value="Edit"
-        className="Edit2"
         onClick={() => {
           onSubmit(text);
-          console.log(text);
         }}
       >
         Edit Item
-      </button>
-      <Button
-        type="button"
-        onClick={() => deleteItem(itemID)}
-        className="delete"
-      >
+      </BasicButton>
+      <BasicButton type="button" onClick={() => deleteItem(itemID)}>
         Delete
-      </Button>
+      </BasicButton>
     </div>
   );
 };
