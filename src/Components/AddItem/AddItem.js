@@ -17,7 +17,7 @@ const BasicInput = styled.input`
   height: 4.955vh;
   font-size: 1.982vh;
   @media (min-width: 280px) and (max-width: 1024px) {
-    width: 50%;
+    width: 40%;
   }
 `;
 const ExtendedBasicInput1 = styled(BasicInput)`
