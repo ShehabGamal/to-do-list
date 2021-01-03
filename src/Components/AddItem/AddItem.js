@@ -7,15 +7,18 @@ const BasicInput = styled.input`
     outline: ${(props) => props.theme.outline};
   }
   font-family: ${(props) => props.theme.fontFamily};
-  padding: 10px;
+  padding: 0.991vh;
   color: ${(props) => props.theme.foreground};
   width: 20%;
   background: ${(props) => props.theme.mainColor};
   border: 0;
   margin: 0 auto;
-  border-radius: 20px;
-  height: 50px;
-  font-size: 20px;
+  border-radius: 1.982vh;
+  height: 4.955vh;
+  font-size: 1.982vh;
+  @media (min-width: 280px) and (max-width: 1024px) {
+    width: 50%;
+  }
 `;
 const ExtendedBasicInput1 = styled(BasicInput)`
   background: transparent;
@@ -25,6 +28,9 @@ const ExtendedBasicInput1 = styled(BasicInput)`
     color: ${(props) => props.theme.foreground};
   }
   border-radius: 0px;
+  @media (min-width: 280px) and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 class AddItem extends Component {

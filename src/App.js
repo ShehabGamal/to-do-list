@@ -16,16 +16,16 @@ const Wrapper = styled.div`
 const Container = styled.div`
   background: ${(props) => props.theme.extraColor};
   height: 70vh;
-  padding-top: 100px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-top: 9.91vh;
+  padding-left: 4.955vh;
+  padding-right: 4.955vh;
   width: 60%;
   margin: 10% auto;
 `;
 const BasicHeader = styled.h1`
   text-align: center;
   color: ${(props) => props.theme.secondaryColor};
-  font-size: 50px;
+  font-size: 4.955vh;
 `;
 function App() {
   //const [items, setItems] = useState([]);
