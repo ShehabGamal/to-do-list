@@ -18,8 +18,8 @@ This is my first react application, I learned many things like using state hooks
 
 ## How To Use The Application??
 
-1.To Create a to-do you should write it in the form and press the button Add Todo
-2.To Delete a to-do you should press the button delete beside the to-do
-3.To Edit a to-do you should click on the to-do, update the to-do and press Edit Item
-4.To Mark a to-do as complete Task you should press the box beside the to-do
+1. To Create a to-do you should write it in the form and press the button Add Todo
+2. To Delete a to-do you should press the button delete beside the to-do
+3. To Edit a to-do you should click on the to-do, update the to-do and press Edit Item
+4. To Mark a to-do as complete Task you should press the box beside the to-do
 
