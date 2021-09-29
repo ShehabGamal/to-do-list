@@ -22,11 +22,7 @@ const Container = styled.div`
   width: 60%;
   margin: 10% auto;
 `;
-const BasicHeader = styled.h1`
-  text-align: center;
-  color: ${(props) => props.theme.secondaryColor};
-  font-size: 4.955vh;
-`;
+
 function App() {
   //const [items, setItems] = useState([]);
   const [items, setItems] = useLocalStorage([], "todo-list");
@@ -60,7 +56,7 @@ function App() {
   return (
     <Wrapper>
       <Container>
-        <BasicHeader>Todo List</BasicHeader>
+      
         <Items
           items={items}
           deleteItem={deleteItem}

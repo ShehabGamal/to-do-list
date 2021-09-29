@@ -1,5 +1,4 @@
 import React from "react";
-import "./Items.css";
 import Item from "../Item/Item.jsx";
 import styled from "styled-components";
 
